@@ -1,0 +1,209 @@
+section_subject_domain_of_videogames
+    => nrel_main_idtf: [Section. Subject domain of videogames] (* <- lang_en;; *);
+    => nrel_main_idtf: [Раздел. Предметная область видеоигр] (* <- lang_ru;; *);
+    -> rrel_key_sc_element: ... (*
+        <- definition;;
+        <- nrel_sc_text_translation: ... (*
+            -> [Видеоигры - это игры с использованием изображений, сгенерированных электронной аппаратурой.](* <- lang_ru;;*);;
+        *);;
+        => nrel_idtf: [Определение ( Видеоигры )];;
+        => nrel_using_constants: ... (*
+            -> concept_games;;
+            -> concept_images;;
+            -> concept_electronic_equipment;;
+        *);;
+    *);;
+    
+section_subject_domain_of_videogames    
+    <= nrel_section_decomposition:
+        {
+            section_strategy_videogames;
+            section_rpg_videogames;
+            section_sandbox_videogames;
+            section_puzzle_videogames;
+            section_platform_videogames;
+            section_fps_shooters_videogames;
+            section_survival_videogames
+        };
+        
+    -> rrel_key_sc_element:
+        concept_games;
+        concept_images;
+        concept_electronic_equipment;
+        subject_domain_videogames;
+    <- non_atomic_section;;
+
+section_strategy_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Раздел. Стратегические видеоигры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Section. Strategic videogames] (* <- lang_en;; *);;
+
+section_rpg_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Раздел. Ролевые видеоигры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Section. Role-playing videogames] (* <- lang_en;; *);;
+
+section_sandbox_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Раздел. Видеоигры-песочницы] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Section. Sandbox videogames] (* <- lang_en;; *);;
+
+section_puzzle_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Раздел. Видеоигры-головоломки] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Section. Puzzle videogames] (* <- lang_en;; *);;
+
+section_platform_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Раздел. Видеоигры-платформеры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Section. Platform videogames] (* <- lang_en;; *);;
+
+section_fps_shooters_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Раздел. Видеоигры-шутеры от первого лица] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Section. FPS-Shooter videogames] (* <- lang_en;; *);;
+
+section_survival_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Раздел. Видеоигры на выживание] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Section. Survival videogames] (* <- lang_en;; *);;
+
+concept_games
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Игры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Games] (* <- lang_en;; *);;
+
+concept_images
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Изображения] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Images] (* <- lang_en;; *);;
+
+concept_electronic_equipment
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Электронная аппаратура] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Electronic equipment] (* <- lang_en;; *);;
+
+//subject domain videogames
+
+subject_domain_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames] (* <- lang_en;; *);
+    -> rrel_maximum_studied_object_class: concept_entertainment_industry;
+    <- rrel_not_maximum_studied_object_class:
+        concept_videogames;
+        concept_consoles;
+        concept_computers;
+        concept_controllers;
+        concept_tournaments;
+    -> rrel_studied_relation:
+        nrel_release_year;
+        nrel_engine;
+        nrel_genre;
+    => nrel_private_subject_domain:
+        subject_domain_videogames_genres;
+        subject_domain_videogames_engines;
+        subject_domain_videogames_popularity;
+        subject_domain_videogames_plot;
+        subject_domain_videogames_gameplay;
+        subject_domain_videogames_design;
+        subject_domain_videogames_mechanics; // игровые механики (как пользователь взаимодействует с миром)
+        subject_domain_videogames_interactivity; // способность влиять на ход событий
+        subject_domain_videogames_difficulty;
+    <= nrel_private_subject_domain: subject_domain_games;
+    <- subject_domain;;
+
+concept_entertainment_industry
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Индустрия развлечений] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Entertainment industry] (* <- lang_en;; *);;
+
+concept_videogames
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Видеоигры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Videogames] (* <- lang_en;; *);;
+
+concept_consoles
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Консоли] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Consoles] (* <- lang_en;; *);;
+
+concept_computers
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Компьютеры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Computers] (* <- lang_en;; *);;
+
+concept_controllers
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Контроллеры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Controllers] (* <- lang_en;; *);;
+
+concept_tournaments
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Турниры] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Tournaments] (* <- lang_en;; *);;
+
+nrel_release_year
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Год выпуска] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Release year] (* <- lang_en;; *);;
+
+nrel_engine
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Движок] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Engine] (* <- lang_en;; *);;
+
+nrel_genre
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Жанр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Genre] (* <- lang_en;; *);;
+
+subject_domain_videogames_design
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область дизайна видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames design] (* <- lang_en;; *);;
+
+subject_domain_videogames_difficulty
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область сложности видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames difficulty] (* <- lang_en;; *);;
+
+subject_domain_videogames_engines
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область движков видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames engines] (* <- lang_en;; *);;
+
+subject_domain_videogames_gameplay
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область игрового процесса видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames gameplay] (* <- lang_en;; *);;
+
+subject_domain_videogames_genres
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область жанров видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames genres] (* <- lang_en;; *);;
+
+subject_domain_videogames_interactivity
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область интерактивности видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames interactivity] (* <- lang_en;; *);;
+
+subject_domain_videogames_mechanics
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область механики видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames mechanics] (* <- lang_en;; *);;
+
+subject_domain_videogames_plot
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область сюжета видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames plot] (* <- lang_en;; *);;
+
+subject_domain_videogames_popularity
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область популярности видеоигр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of videogames popularity] (* <- lang_en;; *);;
+
+subject_domain_games
+    <- sc_node_not_relation;
+    => nrel_main_idtf: [Предметная область игр] (* <- lang_ru;; *);
+    => nrel_main_idtf: [Subject domain of games] (* <- lang_en;; *);;
